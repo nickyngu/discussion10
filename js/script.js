@@ -3,18 +3,67 @@ let pokemonList = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","C
 // Answers
 
 // Question 1
-
+document.getElementById("host-name").innerHTML = "Nicky Nguyen";
+document.getElementById("collaborator-name").innerHTML = "Milli";
 
 //Question 2
 
 
 //Question 3
+let firstNameInput = document.getElementById("first_name");
+let lastNameInput = document.getElementById("last_name");
 
+firstNameInput.addEventListener('input', function() {
+    if (firstNameInput.value.toLowerCase() == 'john') {
+        lastNameInput.value = 'Doe';
+    } else {
+        lastNameInput.value = '';
+    }
+});
 
 //Question 4
+const usernameInput = document.getElementById('user_name');
+const usernameAlert = document.getElementById('username-alert');
 
+usernameInput.addEventListener('input', function() {
+    const enteredUsername = usernameInput.value.trim();
+    let usernameExists = false;
+
+    for (let username of pokemonList) {
+        if (username.toLowerCase == enteredUsername.toLowerCase) {
+            usernameExists = true;
+            break;
+        }
+    }
+
+    if (usernameExists) {
+        usernameAlert.textContent = 'Username already exists';
+    } else {
+        usernameAlert.textContent = 'Unique username created';
+    }
+});
 
 //Question 5
+
+let firstPassword = document.getElementById('password');
+let secondPassword = document.getElementById('confirm_password');
+let passwordAlert = document.getElementById('password-alert');
+
+firstPassword.addEventListener('input', function() {
+    const enteredPassword = firstPassword.value.trim();
+    const confirmPassword = secondPassword.value.trim();
+
+    if (enteredPassword.toLowerCase() == confirmPassword.toLowerCase()) {
+        passwordAlert.textContent = 'Password Matches';
+    } else {
+        passwordAlert.textContent = 'Password does not match';
+    }
+});
+
+// firstPassword.addEventListener('input', function() {
+
+
+// });
 
 
 //Question 6
